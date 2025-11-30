@@ -45,16 +45,19 @@ body {
   align-items: center;
 }
 
-.app-header a {
+.app-header button {
   display: flex;
+  border: none;
+  background: transparent;
   align-items: center;
   color: var(--color-light);
   margin-left: 16px;
   transition: color 0.2s ease;
 }
 
-.app-header a:hover {
+.app-header button:hover {
   color: var(--color-text);
+  cursor: pointer;
 }
 
 .app-title {
@@ -148,4 +151,86 @@ body {
 .highlighted {
   scrollbar-width: thin;
   scrollbar-color: var(--color-dark2) var(--color-dark1);  /* thumb track */
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+
+  opacity: 0;
+  animation: fadeIn 0.15s ease forwards;
+}
+
+.modal {
+  background: var(--color-background);
+  color: var(--color-text);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  max-width: 520px;
+  width: calc(100% - 2rem);
+  border: 2px solid var(--color-dark2);
+
+  opacity: 0;
+  transform: translateY(-6px);
+  animation: modalIn 0.2s ease forwards;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  color: var(--color-light);
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: var(--color-text);
+}
+
+.modal-body p {
+  margin: 0.5rem 0;
+  font-weight: 200;
+}
+
+.modal-body ul {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+/* Keyframes */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

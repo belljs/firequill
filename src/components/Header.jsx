@@ -1,4 +1,4 @@
-export default function Header() {
+export default function Header({ onSettingsClick, onInfoClick }) {
   return (
     <header className="app-header">
       <div>
@@ -18,8 +18,15 @@ export default function Header() {
           <span>Firequill</span>
         </h1>
       </div>
+      {/* HEADER LINKS */}
       <div class="header-links">
-        <a href="#">
+        {/* SETTINGS BUTTON */}
+        <button
+          type="button"
+          onClick={onSettingsClick}
+          aria-label="Open Settings"
+        >
+          {/* Gear SVG */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -32,8 +39,14 @@ export default function Header() {
               clipRule="evenodd"
             />
           </svg>
-        </a>
-        <a href="#">
+        </button>
+        {/* INFO BUTTON */}
+        <button
+          type="button"
+          onClick={onInfoClick}
+          aria-label="Open Info"
+        >
+          {/* Info SVG */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -46,7 +59,7 @@ export default function Header() {
               clipRule="evenodd"
             />
           </svg>
-        </a>
+        </button>
       </div>
     </header>
   );
