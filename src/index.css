@@ -1,8 +1,14 @@
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("/src/assets/fonts/JetBrainsMono/JetBrainsMono-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 :root {
   background: #2d2a2e;
   color: #fcfcfa;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Mono",
-    "Menlo", "Consolas", monospace;
+  font-family: "JetBrainsMono", monospace;
 }
 
 body {
@@ -33,8 +39,7 @@ body {
   width: 100%;
   height: 70vh;
   line-height: 1.4;
-  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  font-family: "JetBrainsMono", monospace;
   font-size: 14px;
   padding: 0.75rem;
   white-space: pre-wrap;
