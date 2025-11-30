@@ -25,23 +25,6 @@ The long-term vision is a suite of lightweight tools that work together to turn 
   - `*` — bullets  
   - `%%%` — blocks  
 
-- **Transparent textarea overlay**  
-  A textarea allows you to input notes as plain-text and this application reactively updates the colorful `<pre>` element behind the textarea to provide coloring.
-
-- **Auto-indentation**
-  - **Enter** preserves existing indentation  
-  - **Tab** indents  
-  - **Shift+Tab** unindents  
-
-- **Offline-first**  
-  Everything is stored in your browser using LocalStorage:
-  - Fast
-  - Private
-  - No login required
-
-- **Zero backend**  
-  - Deploy anywhere (Netlify, Vercel, GitHub Pages).
-
 ## Privacy
 
 - Data is stored using the key: firequill-notes-v1
