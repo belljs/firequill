@@ -6,12 +6,23 @@
 }
 
 :root {
-  background: #2d2a2e;
-  color: #fcfcfa;
-  font-family: "JetBrainsMono", monospace;
+  --color-dark2: #19181a;
+  --color-dark1: #221f22;
+  --color-background: #2d2a2e;
+  --color-light: #504b52;
+  --color-text: #fcfcfa;
+  --color-accent1: #ff6188;
+  --color-accent2: #fc9867;
+  --color-accent3: #ffd866;
+  --color-accent4: #a9dc76;
+  --color-accent5: #78dce8;
+  --color-accent6: #ab9df2;
 }
 
 body {
+  font-family: "JetBrainsMono", monospace;
+  background-color: var(--color-dark1);
+  color: var(--color-text);
   margin: 0;
 }
 
@@ -21,16 +32,57 @@ body {
   padding: 1rem;
 }
 
+.app-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-header a {
+  display: flex;
+  align-items: center;
+  color: var(--color-light);
+  margin-left: 16px;
+  transition: color 0.2s ease;
+}
+
+.app-header a:hover {
+  color: var(--color-text);
+}
+
 .app-title {
   margin-bottom: 0.75rem;
   font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.app-footer {
+  color: var(--color-light);
+}
+
+.footer-link {
+  color: var(--color-light);
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: var(--color-text);
 }
 
 .editor-container {
   position: relative;
   border-radius: 6px;
   overflow: hidden;
-  border: 1px solid #444;
+  border: 2px solid var(--color-dark2);
 }
 
 .highlighted,
@@ -49,7 +101,7 @@ body {
 .highlighted {
   position: absolute;
   inset: 0;
-  background: #2d2a2e;
+  background: var(--color-background);
   overflow: auto;
   pointer-events: none;
 }
@@ -58,8 +110,42 @@ body {
   position: relative;
   background: transparent;
   color: transparent;
-  caret-color: #fcfcfa;
+  caret-color: var(--color-text);
   border: none;
   outline: none;
   overflow: auto;
+}
+
+/* SCROLL BAR STYLES -------------------------------------- */
+/* Applies to BOTH the textarea and the highlighted overlay */
+.editor::-webkit-scrollbar,
+.highlighted::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+.editor::-webkit-scrollbar-track,
+.highlighted::-webkit-scrollbar-track {
+  background: var(--color-dark1);
+}
+
+/* Thumb */
+.editor::-webkit-scrollbar-thumb,
+.highlighted::-webkit-scrollbar-thumb {
+  background-color: var(--color-dark2);  /* scrollbar color */
+  border-radius: 10px;
+  border: 2px solid var(--color-dark2);
+}
+
+/* Thumb on hover */
+.editor::-webkit-scrollbar-thumb:hover,
+.highlighted::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-dark2);
+}
+
+/* Firefox Support */
+.editor,
+.highlighted {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-dark2) var(--color-dark1);  /* thumb track */
 }

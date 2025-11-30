@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="app-footer">
-      <p>Made by James Bell</p>
+      <p><a class="footer-link" href="#">Made by James Bell</a></p>
     </footer>
   );
 }
