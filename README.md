@@ -1,16 +1,49 @@
-# React + Vite
+# Firequill
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight, privacy-first, syntax-highlighted plain-text editor that runs entirely in your browser. No accounts. No databases. No backend. Your notes are stored **locally only** using `localStorage`.
 
-Currently, two official plugins are available:
+Firequill uses a **custom plaintext note-taking syntax** designed for speed, structure, and clarity. The syntax is intentionally simple enough to enable fast recording of notes, meetings, tasks, or daily journaling—while still being structured enough for software to understand.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Firequill is the first tool in a growing ecosystem of **open-source utilities** that will:
 
-## React Compiler
+- parse your notes automatically
+- extract tasks, meetings, and metadata
+- generate meeting summaries  
+- organize projects and tags  
+- convert notes into structured data for other apps or storage/record keeping.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The long-term vision is a suite of lightweight tools that work together to turn everyday plaintext notes into actionable, searchable, connected information—without ever locking you into a proprietary format or requiring a backend.
 
-## Expanding the ESLint configuration
+## Syntax
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Live syntax highlighting** using plain-text markers:
+  - `#` — headings  
+  - `[ ]` — open tasks  
+  - `[X]` — completed tasks  
+  - `!` — important  
+  - `::` — metadata  
+  - `*` — bullets  
+  - `%%%` — blocks  
+
+- **Transparent textarea overlay**  
+  A textarea allows you to input notes as plain-text and this application reactively updates the colorful `<pre>` element behind the textarea to provide coloring.
+
+- **Auto-indentation**
+  - **Enter** preserves existing indentation  
+  - **Tab** indents  
+  - **Shift+Tab** unindents  
+
+- **Offline-first**  
+  Everything is stored in your browser using LocalStorage:
+  - Fast
+  - Private
+  - No login required
+
+- **Zero backend**  
+  - Deploy anywhere (Netlify, Vercel, GitHub Pages).
+
+## Privacy
+
+- Data is stored using the key: firequill-notes-v1
+- Clearing browser storage will erase your notes
+- Notes do not sync across devices (by design)
